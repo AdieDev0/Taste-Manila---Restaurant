@@ -5,6 +5,7 @@ import Navbar from "./Pages/Navbar";
 const App = () => {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route />
       </Routes>
