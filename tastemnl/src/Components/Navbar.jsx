@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Menu } from "@headlessui/react";
+import { FiChevronDown } from "react-icons/fi";
 
 const Navbar = () => {
   return (
@@ -23,17 +25,59 @@ const Navbar = () => {
           <li className=" text-white hover:text-yellow-600 duration-200 font-semibold text-sm cursor-pointer">
             <NavLink to="/menu">MENU</NavLink>
           </li>
-          <details class="dropdown">
-            <summary class="btn m-1">open or close</summary>
-            <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 2</a>
-              </li>
-            </ul>
-          </details>
+          <Menu as="div" className="relative inline-block text-left">
+            <div>
+              <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50">
+                Options
+                <FiChevronDown
+                  aria-hidden="true"
+                  className="-mr-1 text-lg text-gray-400"
+                />
+              </Menu.Button>
+            </div>
+
+            <Menu.Items
+              transition
+              className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+            >
+              <div className="py-1">
+                <Menu.Item>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+                  >
+                    Account settings
+                  </a>
+                </Menu.Item>
+                <Menu.Item>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+                  >
+                    Support
+                  </a>
+                </Menu.Item>
+                <Menu.Item>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+                  >
+                    License
+                  </a>
+                </Menu.Item>
+                <form action="#" method="POST">
+                  <Menu.Item>
+                    <button
+                      type="submit"
+                      className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+                    >
+                      Sign out
+                    </button>
+                  </Menu.Item>
+                </form>
+              </div>
+            </Menu.Items>
+          </Menu>
           <li className=" text-white hover:text-yellow-600 duration-200 font-semibold text-sm cursor-pointer">
             <NavLink to="/contact">CONTACT</NavLink>
           </li>
