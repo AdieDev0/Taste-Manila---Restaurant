@@ -1,14 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Menu } from "@headlessui/react";
-import { FiChevronDown } from "react-icons/fi";
+import { FaCaretDown } from "react-icons/fa6";
 
 const Navbar = () => {
   return (
-    <div className="bg-cyan-950 py-3 px-24">
+    <div className="bg-[#0F172B] py-3 px-24">
       <div className="flex justify-between">
         {/* NAME */}
-        <h1 className=" text-yellow-600 font-bold text-3xl cursor-pointer">
+        <h1 className=" text-yellow-600 font-bold text-4xl cursor-pointer">
           TASTEMNL
         </h1>
         {/* Routes */}
@@ -25,56 +25,48 @@ const Navbar = () => {
           <li className=" text-white hover:text-yellow-600 duration-200 font-semibold text-sm cursor-pointer">
             <NavLink to="/menu">MENU</NavLink>
           </li>
+
+          {/* FROM HEADLESS UI */}
           <Menu as="div" className="relative inline-block text-left">
             <div>
-              <Menu.Button className="inline-flex w-full justify-center items-center gap-x-1.5 text-white hover:text-yellow-600 duration-200">
+              <Menu.Button className="inline-flex w-full justify-center items-center gap-x-1.5 text-white hover:text-yellow-600 duration-200 font-semibold text-sm cursor-pointer">
                 PAGES
-                <FiChevronDown
+                <FaCaretDown
                   aria-hidden="true"
                   className="-mr-1 text-lg text-white hover:text-yellow-600 duration-200"
                 />
               </Menu.Button>
             </div>
-
+            {/* ITEMS */}
             <Menu.Items
               transition
-              className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+              className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-[#0F172B] transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
             >
               <div className="py-1">
                 <Menu.Item>
                   <a
                     href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+                    className="block px-4 py-2 text-md hover:font-bold duration-100 text-gray-700 data-focus:bg-gray-100 data-focus:text-yellow-600 data-focus:outline-hidden"
                   >
-                    Account settings
+                    Booking
                   </a>
                 </Menu.Item>
                 <Menu.Item>
                   <a
                     href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+                    className="block px-4 py-2 text-md hover:font-bold duration-100 text-gray-700 data-focus:bg-gray-100 data-focus:text-yellow-600 data-focus:outline-hidden"
                   >
-                    Support
+                    Our Team
                   </a>
                 </Menu.Item>
                 <Menu.Item>
                   <a
                     href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+                    className="block px-4 py-2 text-md hover:font-bold duration-100 text-gray-700 data-focus:bg-gray-100 data-focus:text-yellow-600 data-focus:outline-hidden"
                   >
-                    License
+                    Testimonials
                   </a>
                 </Menu.Item>
-                <form action="#" method="POST">
-                  <Menu.Item>
-                    <button
-                      type="submit"
-                      className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
-                    >
-                      Sign out
-                    </button>
-                  </Menu.Item>
-                </form>
               </div>
             </Menu.Items>
           </Menu>
